@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
-import styled from 'styled-components'
+import { faker } from '@faker-js/faker';
+// import styled from 'styled-components'
 import './App.css';
 import CatModal from './Components/catModalModule'
 Modal.setAppElement('#root');
@@ -25,8 +26,19 @@ const App = () =>
 					throw new Error(response.statusText);
 				}
 				const data = await response.json();
-				console.log(data)
-				setCat(data);
+
+				const catDetails = data.map((catEntry) =>
+				{
+					return {
+						catImage: catEntry.url,
+						catName: faker.name.firstName(),
+						catPhone: faker.phone.number(),
+						catPrice: Math.ceil(faker.datatype.number() / 100)
+					}
+				})
+
+				console.log(catDetails)
+				setCat(catDetails);
 			} catch (error)
 			{
 				setErrorMsg('Oops, something went wrong...');
@@ -35,6 +47,12 @@ const App = () =>
 		};
 		fetchCat();
 	}, [])
+
+	// display error message to user if something went wrong
+	if (errorMsg !== '')
+	{
+		return <h1>{errorMsg}</h1>
+	}
 
 	return (
 		<div class="imageContainer">
@@ -49,5 +67,7 @@ const App = () =>
 		</div >
 	);
 }
+
+
 
 export default App;

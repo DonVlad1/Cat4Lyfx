@@ -20,7 +20,7 @@ const App = () =>
 			try
 			{
 				setErrorMsg('');
-				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=10');
+				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9');
 				if (!response.ok)
 				{
 					throw new Error(response.statusText);
@@ -55,19 +55,31 @@ const App = () =>
 	}
 
 	return (
-		<div class="imageContainer">
-			{cat.map((catList, index) =>
-			{
-				return (
-					<CatModal key={index} catList={catList}>
-
-					</CatModal>
-				);
-			})}
-		</div >
+		<div class="container">
+			<div class="upper">
+				<div class="top">
+					<div class="nav">
+						<button>About</button>
+						<button>Happy Buyers</button>
+					</div>
+					<div class="basket">
+						<button>Checkout Basket 🛒</button>
+					</div>
+				</div>
+				<div class="title">
+					CATS4LYF
+				</div>
+			</div>
+			<div class="wheel">
+				{cat.map((catList, index) =>
+				{
+					return (
+						<CatModal key={index} catList={catList}/>
+					);
+				})}
+			</div>
+		</div>
 	);
 }
-
-
 
 export default App;

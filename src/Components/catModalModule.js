@@ -29,29 +29,21 @@ const CatModal = ({ catList }) =>
 
 
     return (
-        <div class="catImages">
-            <CatImage onClick={openModal} src={catList.catImage} />
-            <Modal isOpen={catStateModal} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
-                <CatImage src={catList.catImage} alt="catPic" />
-                <button onClick={addToBasket}>Add To Cart</button>
-                <p>{catList.catName}</p>
-                <p>{catList.catPhone}</p>
-                <p>{catList.catPrice}</p>
-                {/* {console.log(allCatDetails)} */}
-            </Modal>
-        </div>
+		<div className="imageBox">
+		<img onClick={openModal} src={catList.catImage} className="wheelImages" alt="cat"/>
+		<Modal isOpen={catStateModal} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
+			<img src={catList.catImage} alt="catPic" />
+            <button onClick={addToBasket}>Add To Cart</button>
+			<p>{catList.catName}</p>
+			<p>{catList.catPhone}</p>
+			<p>{catList.catPrice}</p>
+		</Modal>
+	</div>
     )
 }
 
 
 export default CatModal
-
-const CatImage = styled.img`
-    display: flex;
-    justify-content: center;
-    width: 200px;
-    margin: 10px;
-`
 
 const customStyles = {
     content: {

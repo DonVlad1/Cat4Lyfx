@@ -1,9 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { faker } from '@faker-js/faker';
-// import styled from 'styled-components'
 import './App.css';
-import CatModal from './Components/catModalModule'
+import CatModal from './Components/catModalModule';
 Modal.setAppElement('#root');
 
 
@@ -20,7 +19,7 @@ const App = () =>
 			try
 			{
 				setErrorMsg('');
-				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9');
+				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9&uniqueitems=true');
 				if (!response.ok)
 				{
 					throw new Error(response.statusText);
@@ -55,28 +54,33 @@ const App = () =>
 	}
 
 	return (
-		<div class="container">
-			<div class="upper">
-				<div class="top">
-					<div class="nav">
-						<button>About</button>
-						<button>Happy Buyers</button>
+		<div className="fullContainer">
+			<div className="container">
+				<div className="upper">
+					<div className="top">
+						<div className="nav">
+							<button>About</button>
+							<button>Happy Buyers</button>
+						</div>
+						<div>
+							<button className="basket">Checkout Basket 🛒</button>
+						</div>
 					</div>
-					<div class="basket">
-						<button>Checkout Basket 🛒</button>
+					<div className="title">
+						CATS4LYF
 					</div>
 				</div>
-				<div class="title">
-					CATS4LYF
+				<div className="wheel">
+					{cat.map((catList, index) =>
+					{
+						return (
+							<CatModal key={index} catList={catList}/>
+						);
+					})}
 				</div>
 			</div>
-			<div class="wheel">
-				{cat.map((catList, index) =>
-				{
-					return (
-						<CatModal key={index} catList={catList}/>
-					);
-				})}
+			<div className="side">
+				<p>box</p>
 			</div>
 		</div>
 	);

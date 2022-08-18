@@ -29,7 +29,7 @@ const App = () =>
 			try
 			{
 				setErrorMsg('');
-				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=10');
+				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9');
 				if (!response.ok)
 				{
 					throw new Error(response.statusText);
@@ -47,17 +47,33 @@ const App = () =>
 	}, [])
 
 	return (
-		<div class="imageContainer">
-			{cat.map((catList, index) =>
-			{
-				return (
-					<AnimeModal key={index} catList={catList}>
+		<div class="container">
+			<div class="upper">
+				<div class="top">
+					<div class="nav">
+						<button>About</button>
+						<button>Happy Buyers</button>
+					</div>
+					<div class="basket">
+						<button>Checkout Basket 🛒</button>
+					</div>
+				</div>
+				<div class="title">
+					CATS4LYF
+				</div>
+			</div>
+			<div class="wheel">
+				{cat.map((catList, index) =>
+				{
+					return (
+						<AnimeModal key={index} catList={catList}>
 
-					</AnimeModal>
-					// console.log(animeList.url)
-				);
-			})}
-		</div >
+						</AnimeModal>
+						// console.log(animeList.url)
+					);
+				})}
+			</div>
+		</div>
 	);
 }
 
@@ -79,8 +95,8 @@ const AnimeModal = ({ catList }) =>
 	}
 
 	return (
-		<div class="animeImages">
-			<img onClick={openModal} src={catList.url} />
+		<div class="imageBox">
+			<img onClick={openModal} src={catList.url} class="wheelImages" alt="cat"/>
 			<Modal isOpen={animeStateModal} onRequestClose={closeModal} style={customStyles} contentLabel="Example Modal">
 				<img onClick={"buyCat"} src={catList.url} alt="anime" />
 				<button onClick={"addToCarCatFunction"}>Add To Cart</button>

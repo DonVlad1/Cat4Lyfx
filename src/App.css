@@ -1,46 +1,102 @@
-.App {
-  text-align: center;
+body {
+  background-image: url("background.jpg");
+  background-position: top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.root
-{
+.container {
   display: flex;
-  width: 50%;
-  height: 50%;
-}
-
-.imageContainer
-{
-  display: flex;
-  margin: green;
-  justify-content: center;
-  flex-wrap: wrap;
-  flex-wrap: 1;
-  width: 100%;
-}
-
-.images
-{
-  width: 10%;
-
-}
-.animeImages
-{
-  display: flex;
-  justify-content: center;
+  height: 100vh;
+  width: 100vw;
   flex-direction: column;
-  margin: red;
-  width: 10%;
-  height: 10%;
+  justify-content: flex-start;
+  align-content: space-between;
+  align-items: center;
 }
 
+.upper {
+  width: 98vw;
+  text-align: center;
+  border-radius: 15px 15px 70px 70px;
+  color: white;
+  border: solid rgb(255, 255, 255);
+  padding: 0.5em;
+  background-color: rgba(146, 235, 245, 0.356);
+}
 
-.modal
+.top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav {
+  display: flex;
+}
+
+.title {
+  margin-top: 1em;
+  font-size: 3em;
+  padding: 0.25em 1em;
+  text-shadow: 0 0 3px #aa00ff;
+}
+
+.wheel {
+  margin-top: 3em;
+  max-width: 80vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.imageBox {
+  width: 23%;
+  height: 20vh;
+  margin: 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(146, 235, 245, 0.356);
+  background-image: url("border.gif");
+  background-position: top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+
+.wheelImages
+{
+  height: 15vh;
+  max-width: 98%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.wheelImages:hover {
+  cursor: pointer;
+  animation: grow 2s infinite;
+}
+
+button {
+  padding: 1.5em;
+  color: white;
+  border: none;
+  background: none;
+  background-image: url("buttonBack.png");
+  background-position: top;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+}
+button:hover {
+  cursor: pointer;
+  color: rgb(43, 226, 156);
+}
+
+@keyframes grow {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+/* .modal
 {
   position: fixed;
   left: 0;
@@ -51,39 +107,4 @@
   display: flex;
   align-items: center;
   justify-content: center;
-
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-.somethingTest {
-  color: pink;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+} */

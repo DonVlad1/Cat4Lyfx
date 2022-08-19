@@ -43,7 +43,7 @@ function Sidebar({ checkOut, setCheckOut })
                         </li>
                         <div>
                             <button>Checkout</button>
-                            <img src={checkOut.catImage} />
+                            <img className='image' src={checkOut.catImage} />
                             <div>
                                 {checkOut.map((checkOutList, checkIndex) =>
                                 {

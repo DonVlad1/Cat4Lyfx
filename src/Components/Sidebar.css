@@ -1,10 +1,5 @@
 .sidebar {
-    /* background-color: #060b26; */
     background: none;
-    /* height: 80px; */
-    /* display: flex;
-    justify-content: flex-end;
-    align-items: center; */
 }
 
 .menu-bars {
@@ -73,7 +68,6 @@
 
 /* the X on the side bar close it */
 .sidebar-toggle {
-    /* background-color: #060b26; */
     width: 100%;
     height: 80px;
     display: flex;

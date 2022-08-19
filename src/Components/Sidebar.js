@@ -42,7 +42,7 @@ function Sidebar({checkOut, setCheckOut}) {
                                     {
                                         console.log(checkOut)
                                         return (
-                                            <img src={checkOutList.catImage} />
+                                            <img key={checkIndex} src={checkOutList.catImage} />
                                         );
                                     })}
                                 </div>

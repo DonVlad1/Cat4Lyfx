@@ -22,7 +22,7 @@ function Home({ cat, checkOut, setCheckOut })
                         </Link>
                     </div>
                     <div className="highZ">
-                        <Sidebar checkOut={checkOut} setCheckOut={setCheckOut} />
+                        <Sidebar cat={cat} checkOut={checkOut} setCheckOut={setCheckOut} />
                     </div>
                 </div>
                 <div className="title">
@@ -34,7 +34,7 @@ function Home({ cat, checkOut, setCheckOut })
             {
                 return (
                     (catList==="middle message")?(
-                        <p className="middleMessage">SHOP FOR A NEW,<br/><br/>FURRY COMPANION!</p>
+                        <p key={index} className="middleMessage">SHOP FOR A NEW,<br/><br/>FURRY COMPANION!</p>
                     ):(
                         <CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
                     )

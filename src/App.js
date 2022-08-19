@@ -33,9 +33,10 @@ const App = () =>
 				}
 				const data = await response.json();
 
-				const catDetails = data.map((catEntry) =>
+				const catDetails = data.map((catEntry, index) =>
 				{
 					return {
+						catId: index,
 						catImage: catEntry.url,
 						catName: faker.name.firstName(),
 						catPhone: faker.phone.number(),
@@ -64,7 +65,7 @@ const App = () =>
 		<div className="fullContainer">
 			<Router>
 				<Routes>
-					<Route path='/' exact element={<Home cat={cat} checkOut={checkOut} setCheckOut={setCheckOut} />} />
+					<Route path='/' exact element={<Home cat={cat}checkOut={checkOut} setCheckOut={setCheckOut} />} />
 					<Route path='/checkout' element={<Checkout checkOut={checkOut} setCheckOut={setCheckOut} />} />
 					<Route path='/About' element={<About />} checkOut={checkOut} setCheckOut={setCheckOut} />
 					<Route path='/happybuyers' element={<HappyBuyers />} checkOut={checkOut} setCheckOut={setCheckOut} />

@@ -33,9 +33,10 @@ const App = () =>
 				}
 				const data = await response.json();
 
-				const catDetails = data.map((catEntry) =>
+				const catDetails = data.map((catEntry, index) =>
 				{
 					return {
+						catId: index,
 						catImage: catEntry.url,
 						catName: faker.name.firstName(),
 						catPhone: faker.phone.number(),

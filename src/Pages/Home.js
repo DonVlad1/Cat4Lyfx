@@ -34,7 +34,7 @@ function Home({ cat, checkOut, setCheckOut, total, setTotal })
             {
                 return (
                     (catList==="middle message")?(
-                        <p className="middleMessage">SHOP FOR A NEW,<br/><br/>FURRY COMPANION!</p>
+                        <p key={index} className="middleMessage">SHOP FOR A NEW,<br/><br/>FURRY COMPANION!</p>
                     ):(
                         <CatModal key={index} total={total} setTotal={setTotal} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
                     )

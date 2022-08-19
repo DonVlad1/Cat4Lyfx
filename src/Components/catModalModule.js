@@ -2,7 +2,7 @@ import Modal from 'react-modal'
 import { useState } from 'react'
 import '../App.css';
 
-const CatModal = ({ catList, checkOut, setCheckOut }) =>
+const CatModal = ({ catList, checkOut, setCheckOut, total, setTotal }) =>
 {
     const [catStateModal, showCatStateModal] = useState(false)
 
@@ -19,6 +19,9 @@ const CatModal = ({ catList, checkOut, setCheckOut }) =>
 
     function addToBasket()
     {
+        // for (let i = 1; i < checkOut.length; i++){
+        //     setTotal(total += checkOut.catPrice);
+        // }
         const tempCatList = [...checkOut, catList]
         setCheckOut(tempCatList)
     }

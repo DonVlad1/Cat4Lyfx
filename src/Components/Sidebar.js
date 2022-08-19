@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect,useState } from 'react';
 import styled from 'styled-components'
 import * as AiIcons from "react-icons/ai";
 import { Link } from 'react-router-dom';
@@ -8,11 +8,18 @@ import "./Sidebar.css"
 
 
 
-function Sidebar({ checkOut, setCheckOut })
+function Sidebar({ checkOut, setCheckOut, total, setTotal })
 {
     const [sidebar, setSidebar] = useState(false)
     const showSidebar = () => setSidebar(!sidebar)
-
+    useEffect(()=> {
+        // console.log(checkOut[0].catPrice)
+        let sum = 0
+        for (let i = 0; i < checkOut.length; i++){
+            sum += Number(checkOut[i].catPrice)
+        }
+        setTotal(sum.toFixed(2))
+    }, [checkOut,setTotal])
 
     return (
         <>
@@ -34,15 +41,16 @@ function Sidebar({ checkOut, setCheckOut })
                                 {checkOut.map((checkOutList, checkIndex) =>
                                 {
                                     return (
-                                        <div className="polaroidStyle">
+                                        <div>
+                                            <div className="polaroidStyle">
                                             <img key={checkIndex} src={checkOutList.catImage} className="basketImg"/>
-                                            {/* <p>{catList.catName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;{catList.catPrice}</p> */}
-                                            <p className="caption">name & price here</p>
+                                            <p className="caption">{checkOutList.catName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;£{checkOutList.catPrice}</p>
+                                            </div>
                                         </div>
                                         );
                                     })}
                             </div>
-                            <p className="runningTotal">running total here</p>
+                            <p className="runningTotal">£{(total)}</p>
                             <Link to="/checkout">
                                 <button className="sendCheckout">Checkout</button>
                             </Link>

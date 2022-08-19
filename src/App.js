@@ -16,8 +16,8 @@ const App = () =>
 {
 	const [errorMsg, setErrorMsg] = useState('');
 	const [cat, setCat] = useState([]);
-	const [checkOut, setCheckOut] = useState([])
-
+	const [checkOut, setCheckOut] = useState([]);
+	const [total, setTotal] = useState(0);
 
 	useEffect(() =>
 	{
@@ -64,7 +64,7 @@ const App = () =>
 		<div className="fullContainer">
 			<Router>
 				<Routes>
-					<Route path='/' exact element={<Home cat={cat} checkOut={checkOut} setCheckOut={setCheckOut} />} />
+					<Route path='/' exact element={<Home cat={cat} total={total} setTotal={setTotal} checkOut={checkOut} setCheckOut={setCheckOut} />} />
 					<Route path='/checkout' element={<Checkout checkOut={checkOut} setCheckOut={setCheckOut} />} />
 					<Route path='/About' element={<About />} checkOut={checkOut} setCheckOut={setCheckOut} />
 					<Route path='/happybuyers' element={<HappyBuyers />} checkOut={checkOut} setCheckOut={setCheckOut} />

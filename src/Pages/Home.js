@@ -3,7 +3,7 @@ import CatModal from '../Components/catModalModule';
 import Sidebar from '../Components/Sidebar'
 import { Link } from 'react-router-dom';
 
-function Home({ cat, checkOut, setCheckOut })
+function Home({ cat, checkOut, setCheckOut, total, setTotal })
 {
 
     return (
@@ -22,7 +22,7 @@ function Home({ cat, checkOut, setCheckOut })
                         </Link>
                     </div>
                     <div className="highZ">
-                        <Sidebar checkOut={checkOut} setCheckOut={setCheckOut} />
+                        <Sidebar checkOut={checkOut} setCheckOut={setCheckOut} total={total} setTotal={setTotal}/>
                     </div>
                 </div>
                 <div className="title">
@@ -36,7 +36,7 @@ function Home({ cat, checkOut, setCheckOut })
                     (catList==="middle message")?(
                         <p className="middleMessage">SHOP FOR A NEW,<br/><br/>FURRY COMPANION!</p>
                     ):(
-                        <CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
+                        <CatModal key={index} total={total} setTotal={setTotal} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
                     )
                 );
             })}

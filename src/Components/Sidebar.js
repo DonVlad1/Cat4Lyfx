@@ -41,22 +41,6 @@ function Sidebar({ checkOut, setCheckOut })
                                 <AiIcons.AiOutlineClose className='x-icon' onClick={showSidebar} />
                             </Link>
                         </li>
-    <>  
-        <div className={sidebar ? 'sideBar active sideBarOpen' : 'sideBar'}>
-            <Link to="#" className='menu-bars'>
-                <button className="basket" onClick={showSidebar}>
-                    <BasketDiv>
-                        Checkout Basket&nbsp;&nbsp;
-                        <AiIcons.AiOutlineShoppingCart className='cart-icon'/>
-                    </BasketDiv>
-                </button>
-            </Link>
-            <nav className='side-menu'>
-                <ul className='side-menu-items'>
-                    <li className='sidebar-toggle'>
-                        <Link to="#" className='menu-bars'>
-                        </Link>
-                    </li>
                         <div>
                             <button>Checkout</button>
                             <img src={checkOut.catImage} />
@@ -82,5 +66,4 @@ export default Sidebar
 const BasketDiv = styled.div`
     display: flex;
     align-items: center;
-
 `

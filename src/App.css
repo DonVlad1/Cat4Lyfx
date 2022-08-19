@@ -119,11 +119,15 @@ body {
     background: rgb(41, 40, 40);
     transform: translate(-50%,-50%);
     padding: 1em;
+    border: solid rgb(99, 130, 223);
     border-radius: 1em;
+    box-shadow: 0 0 8px 0 rgb(252, 12, 252), 0 6px 20px 0 rgba(11, 18, 231, 0.19);
 }
 
 .modalImg {
     height: 60%;
+    box-shadow: 0 8px 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1em;
 }
 
 .modalContent button {

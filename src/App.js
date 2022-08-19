@@ -66,7 +66,6 @@ const App = () =>
 								<button>Happy Buyers</button>
 							</div>
 							<div>
-								{/* <button className="basket">Checkout Basket 🛒</button> */}
 								<Sidebar />
 							</div>
 						</div>

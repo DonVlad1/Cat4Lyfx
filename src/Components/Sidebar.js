@@ -15,10 +15,8 @@ function Sidebar() {
     <>  
 
 
-        <div className='sidebar'>
+        <div className={sidebar ? 'sideBar active sideBarOpen' : 'sideBar'}>
             <Link to="#" className='menu-bars'>
-                {/* hamburger icon for sidebar */}
-                {/* <FaIcons.FaBars onClick={showSidebar}/> 🛒*/}
                 <button className="basket" onClick={showSidebar}>
                     <BasketDiv>
                         Checkout Basket&nbsp;&nbsp;
@@ -26,13 +24,10 @@ function Sidebar() {
                     </BasketDiv>
                 </button>
             </Link>
-            <nav className={sidebar ? 'side-menu active' : 'side-menu'}>
+            <nav className='side-menu'>
                 <ul className='side-menu-items'>
                     <li className='sidebar-toggle'>
                         <Link to="#" className='menu-bars'>
-                            {/* changes x to white */}
-                                {/* the X on the sidebar \/ */}
-                                <AiIcons.AiOutlineClose className='x-icon' onClick={showSidebar}/>
                         </Link>
                     </li>
                         <div>
@@ -50,4 +45,5 @@ export default Sidebar
 const BasketDiv = styled.div`
     display: flex;
     align-items: center;
+
 `

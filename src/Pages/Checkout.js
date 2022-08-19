@@ -19,7 +19,7 @@ function Checkout() {
 				</div>
 				<div>
 					<Link to="/">
-						<button className="basket">Back</button>
+						<button className="basket fixMeDaddy">Back</button>
 					</Link>
 				</div>
 			</div>

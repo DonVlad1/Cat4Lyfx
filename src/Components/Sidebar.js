@@ -67,5 +67,3 @@ const BasketDiv = styled.div`
     display: flex;
     align-items: center;
 `
-
-//test

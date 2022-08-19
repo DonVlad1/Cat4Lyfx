@@ -1,187 +1,208 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+English&family=Lobster+Two&display=swap');
 
+
+/* tempcontainer */
+*{
+    box-sizing: border-box;
+    /* margin: 0;
+    padding: 0; */
+    /* font-family: 'IM Fell English', serif; */
+}
+
+/* tempcontainer */
+/* .tempContain{
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+} */
+
+
 .fullContainer {
-  width: 100vw;
-  height: 100vh;
-  outline: 1px solid skyblue;
-  display: flex;
-  justify-items: space-between;
+    width: 100vw;
+    height: 100vh;
+    outline: 1px solid skyblue;
+    display: flex;
+    justify-items: space-between;
 }
 
 .container {
-  display: flex;
-  height: 100%;
-  width: 100%;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-content: space-between;
-  align-items: center;
-  background-image: url("background.png");
-  background-position: top;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-content: space-between;
+    align-items: center;
+    background-image: url("background.png");
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
 .upper {
-  width: 100%;
-  text-align: center;
-  border-bottom: solid white;
-  border-radius: 100px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.458);
+    width: 100%;
+    text-align: center;
+    border-bottom: solid white;
+    border-radius: 100px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.458);
 }
 
 .top {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 .nav {
-  display: flex;
+    display: flex;
 }
 
 .title {
-  font-family: 'IM Fell English', serif;
-  font-size: 4em;
-  padding: 0.25em 1em;
-  text-shadow: 0 0 3px #aa00ff;
+    font-family: 'IM Fell English', serif;
+    font-size: 4em;
+    padding: 0.25em 1em;
+    text-shadow: 0 0 3px #aa00ff;
 }
 
 .wheel {
-  margin-top: 3em;
-  max-width: 80vw;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+    margin-top: 3em;
+    max-width: 80vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .imageBox {
-  width: 23%;
-  height: 20vh;
-  margin: 1em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.458);
-  background-image: url("border.gif");
-  background-position: top;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+    width: 23%;
+    height: 20vh;
+    margin: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.458);
+    background-image: url("border.gif");
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 
 .wheelImages
 {
-  height: 15vh;
-  max-width: 98%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 15vh;
+    max-width: 98%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .wheelImages:hover{
-  cursor: pointer;
-  animation: grow 2s infinite;
+    cursor: pointer;
+    animation: grow 2s infinite;
 }
 
 
 .nav button {
-  padding: 1.5em;
-  color: white;
-  border: none;
-  background: none;
-  background-image: url("buttonBack.png");
-  background-position: top;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+    padding: 1.5em;
+    color: white;
+    border: none;
+    background: none;
+    background-image: url("buttonBack.png");
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    transition: 0.2s;
 }
 
 .modalContent
 {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  position:fixed;
-  height: 80%;
-  min-width: 20%;
-  top:50%;
-  left:50%;
-  color: white;
-  background: rgb(41, 40, 40);
-  transform: translate(-50%,-50%);
-  padding: 1em;
-  border-radius: 1em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    position:fixed;
+    height: 80%;
+    min-width: 20%;
+    top:50%;
+    left:50%;
+    color: white;
+    background: rgb(41, 40, 40);
+    transform: translate(-50%,-50%);
+    padding: 1em;
+    border-radius: 1em;
 }
 
 .modalImg {
-  height: 60%;
+    height: 60%;
 }
 
 .modalContent button {
-  width: 30%;
-  padding: 1.5em;
-  color: white;
-  border: none;
-  background: none;
-  background-image: url("buttonBack.png");
-  background-position: top;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+    width: 30%;
+    padding: 1.5em;
+    color: white;
+    border: none;
+    background: none;
+    background-image: url("buttonBack.png");
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
 .modalContent button:hover {
-  animation: shake 0.5s infinite;
+    animation: shake 0.5s infinite;
 }
 
 button:hover {
-  cursor: pointer;
-  color: rgb(43, 226, 156);
+    cursor: pointer;
+    color: rgb(43, 226, 156);
+    transition: 0.2s;
 }
 
 .modalZ {
-  position: fixed;
-  top: 0%;
-  left: 0%;
-  width:100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.632);
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.632);
 }
 
 .basket {
-  margin-top: 0.75em;
-  padding: 1em;
-  color: rgb(255, 255, 255);
-  border: solid rgb(236, 92, 224);
-  border-radius: 100px 15px 15px 100px;
-  border-right: none;
-  background: none;
+    margin-top: 0.75em;
+    padding: 1em;
+    color: rgb(255, 255, 255);
+    border: solid rgb(236, 92, 224);
+    border-radius: 100px 15px 15px 100px;
+    border-right: none;
+    background: none;
+    transition: 0.2s;
 }
 
-.side {
-  width: 20vw;
-  height: 99.35vh;
-  border: solid rgb(236, 92, 224);
-  border-right: none;
-  background-color: rgb(0, 0, 0);
-  /* display: none; */
-}
+/* commented out as it temporarily not being used */
+/* .side {
+    width: 20vw;
+    height: 99.35vh;
+    border: solid rgb(236, 92, 224);
+    border-right: none;
+    background-color: rgb(0, 0, 0);
+    display: none;
+} */
 
 @keyframes grow {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
 }
 
 @keyframes shake {
-  0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

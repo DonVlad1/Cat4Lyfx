@@ -3,9 +3,11 @@ import Modal from 'react-modal';
 import { faker } from '@faker-js/faker';
 import './App.css';
 import CatModal from './Components/catModalModule';
+import Sidebar from './Components/Sidebar';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 Modal.setAppElement('#root');
 
-
+	
 
 const App = () =>
 {
@@ -55,33 +57,41 @@ const App = () =>
 
 	return (
 		<div className="fullContainer">
-			<div className="container">
-				<div className="upper">
-					<div className="top">
-						<div className="nav">
-							<button>About</button>
-							<button>Happy Buyers</button>
+			<Router>
+				<div className="container">
+					<div className="upper">
+						<div className="top">
+							<div className="nav">
+								<button>About</button>
+								<button>Happy Buyers</button>
+							</div>
+							<div>
+								{/* <button className="basket">Checkout Basket 🛒</button> */}
+								<Sidebar />
+							</div>
 						</div>
-						<div>
-							<button className="basket">Checkout Basket 🛒</button>
+						<div className="title">
+							CATS4LYF
 						</div>
 					</div>
-					<div className="title">
-						CATS4LYF
+					<div className="wheel">
+						{cat.map((catList, index) =>
+						{
+							return (
+								<CatModal key={index} catList={catList}/>
+							);
+						})}
 					</div>
 				</div>
-				<div className="wheel">
-					{cat.map((catList, index) =>
-					{
-						return (
-							<CatModal key={index} catList={catList}/>
-						);
-					})}
-				</div>
-			</div>
-			<div className="side">
-				<p>box</p>
-			</div>
+
+
+				{/* <div className="side">
+					<p>box</p>
+				</div> */}
+				<Routes>
+					<Route path='/'/>
+				</Routes>
+			</Router>
 		</div>
 	);
 }

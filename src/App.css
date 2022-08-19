@@ -68,9 +68,10 @@ body {
     flex-wrap: wrap;
     justify-content: center;
     background-color: rgba(0, 0, 0, 0.458);
-    background-image: url("neonframe.png");
+    background-image: url("neonframe-edit.png");
     background-position: center;
-    background-size: 125.5% 223%;
+    background-size: 100% 100%;
+    /* background-size: 125.5% 223%; */
     /* background-size: 124.5% 220%; */
     background-repeat: no-repeat;
     transform: rotate(180deg);

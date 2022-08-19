@@ -19,12 +19,12 @@ function About({ checkOut, setChe })
 						<Link to="/happybuyers">
 							<button>Happy Buyers</button>
 						</Link>
-					</div>
-					<div>
 						<Link to="/checkout">
-							<button className="basket">Checkout</button>
+							<button>View Basket</button>
 							{console.log(checkOut)}
 						</Link>
+					</div>
+					<div>
 					</div>
 				</div>
 				<div className="title">

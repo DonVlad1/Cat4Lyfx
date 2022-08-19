@@ -45,5 +45,4 @@ export default Sidebar
 const BasketDiv = styled.div`
     display: flex;
     align-items: center;
-
 `

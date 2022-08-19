@@ -4,15 +4,16 @@ import { faker } from '@faker-js/faker';
 import './App.css';
 import CatModal from './Components/catModalModule';
 import Sidebar from './Components/Sidebar';
-import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 Modal.setAppElement('#root');
 
-	
+
 
 const App = () =>
 {
 	const [errorMsg, setErrorMsg] = useState('');
 	const [cat, setCat] = useState([]);
+	const [checkOut, setCheckOut] = useState([])
 
 	useEffect(() =>
 	{
@@ -67,7 +68,7 @@ const App = () =>
 							</div>
 							<div>
 								{/* <button className="basket">Checkout Basket 🛒</button> */}
-								<Sidebar />
+								<Sidebar checkOut={checkOut} setCheckOut={setCheckOut} />
 							</div>
 						</div>
 						<div className="title">
@@ -78,7 +79,7 @@ const App = () =>
 						{cat.map((catList, index) =>
 						{
 							return (
-								<CatModal key={index} catList={catList}/>
+								<CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut} />
 							);
 						})}
 					</div>
@@ -89,7 +90,7 @@ const App = () =>
 					<p>box</p>
 				</div> */}
 				<Routes>
-					<Route path='/'/>
+					<Route path='/' />
 				</Routes>
 			</Router>
 		</div>

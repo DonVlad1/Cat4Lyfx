@@ -7,10 +7,11 @@ import "./Sidebar.css"
 
 
 
-function Sidebar() {
+function Sidebar({checkOut, setCheckOut}) {
     const [sidebar, setSidebar] = useState(false)
-
     const showSidebar = () => setSidebar(!sidebar)
+
+
     return (
     <>  
 
@@ -28,10 +29,24 @@ function Sidebar() {
                 <ul className='side-menu-items'>
                     <li className='sidebar-toggle'>
                         <Link to="#" className='menu-bars'>
+                            
                         </Link>
                     </li>
+                        {/* new checkout button */}
                         <div>
-                            <button>Checkout</button>
+                            <Link to="/checkout">
+                                <button>Checkout</button>
+                                <img className='image' src={checkOut.catImage} />
+                                <div>
+                                    {checkOut.map((checkOutList, checkIndex) =>
+                                    {
+                                        console.log(checkOut)
+                                        return (
+                                            <img src={checkOutList.catImage} />
+                                        );
+                                    })}
+                                </div>
+                            </Link>
                         </div>
                 </ul>
             </nav>

@@ -16,28 +16,30 @@ function Sidebar({ checkOut, setCheckOut })
 
     return (
         <>
-
-
-            <div className={sidebar ? 'sideBar active sideBarOpen' : 'sideBar'}>
-                <Link to="#" className='menu-bars'>
-                    <button className="basket" onClick={showSidebar}>
+        <div className={sidebar ? 'fixMeDaddy somethingElse' : 'fixMeDaddy'}>
+            <button className="basket" onClick={showSidebar}>
                         <BasketDiv>
                             Checkout Basket&nbsp;&nbsp;
-                            <AiIcons.AiOutlineShoppingCart className='cart-icon' />
+                            <AiIcons.AiOutlineShoppingCart className='cart-icon'/>
                         </BasketDiv>
-                    </button>
-                </Link>
-                <nav className='side-menu'>
-                    <ul className='side-menu-items'>
-                        <li className='sidebar-toggle'>
-                            <Link to="#" className='menu-bars'>
-
-                            </Link>
-                        </li>
-                        {/* new checkout button */}
+            </button>
+        </div>
+        <div className={sidebar ? 'sideBar active' : 'sideBar'}>
+            <nav className='side-menu'>
+                <ul className='side-menu-items'>
+                    <li className='sidebar-toggle'>
+                    </li>
                         <div>
+                            <div className="basketContents">
+                                {checkOut.map((checkOutList, checkIndex) =>
+                                {
+                                    return (
+                                        <img key={checkIndex} src={checkOutList.catImage} className="basketImg"/>
+                                        );
+                                    })}
+                            </div>
                             <Link to="/checkout">
-                                <button>Checkout</button>
+                                <button className="sendCheckout">Checkout</button>
                             </Link>
                             {checkOut.map((checkOutList, checkIndex) =>
                             {

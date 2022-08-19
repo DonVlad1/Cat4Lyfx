@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CatModal from '../Components/catModalModule';
 import Sidebar from '../Components/Sidebar'
 import { Link } from 'react-router-dom';
@@ -29,19 +29,19 @@ function Home({ cat, checkOut, setCheckOut })
                     CATS4LYF
                 </div>
             </div>
-            <div className="wheel">
-                {cat.map((catList, index) =>
-                {
-                    return (
-                        (catList === "middle message") ? (
-                            <p className="middleMessage">shop for a new,<br />furry companion!</p>
-                        ) : (
-                            <CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut} />
-                        )
-                    );
-                })}
-            </div>
+        <div className="wheel">
+            {cat.map((catList, index) =>
+            {
+                return (
+                    (catList==="middle message")?(
+                        <p className="middleMessage">SHOP FOR A NEW,<br/><br/>FURRY COMPANION!</p>
+                    ):(
+                        <CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
+                    )
+                );
+            })}
         </div>
+    </div>
     )
 }
 

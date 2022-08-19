@@ -23,7 +23,7 @@ const App = () =>
 			try
 			{
 				setErrorMsg('');
-				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9&uniqueitems=true');
+				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=8&uniqueitems=true');
 				if (!response.ok)
 				{
 					throw new Error(response.statusText);
@@ -39,7 +39,7 @@ const App = () =>
 						catPrice: Math.ceil(faker.datatype.number() / 100)
 					}
 				})
-
+				catDetails.splice(4,0,"middle message")
 				console.log(catDetails)
 				setCat(catDetails);
 			} catch (error)
@@ -60,9 +60,6 @@ const App = () =>
 	return (
 		<div className="fullContainer">
 			<Router>
-				{/* <div className="side">
-					<p>box</p>
-				</div> */}
 				<Routes>
 					<Route path='/' exact element={<Home cat={cat}/>}/>
 					<Route path='/checkout' element={<Checkout />}/>

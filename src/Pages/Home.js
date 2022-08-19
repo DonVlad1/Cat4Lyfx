@@ -23,7 +23,7 @@ const [checkOut, setCheckOut] = useState([])
                     <button>Happy Buyers</button>
                 </Link>
                 </div>
-                <div>
+                <div className="highZ">
                     <Sidebar checkOut={checkOut} setCheckOut={setCheckOut}/>
                 </div>
             </div>
@@ -35,7 +35,11 @@ const [checkOut, setCheckOut] = useState([])
             {cat.map((catList, index) =>
             {
                 return (
-                    <CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
+                    (catList==="middle message")?(
+                        <p className="middleMessage">shop for a new,<br/>furry companion!</p>
+                    ):(
+                        <CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
+                    )
                 );
             })}
         </div>

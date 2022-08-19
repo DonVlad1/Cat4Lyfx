@@ -2,9 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Modal from 'react-modal';
 import { faker } from '@faker-js/faker';
 import './App.css';
-import CatModal from './Components/catModalModule';
-import Sidebar from './Components/Sidebar';
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Checkout from './Pages/Checkout';
+import HappyBuyers from './Pages/HappyBuyers';
+import About from './Pages/About';
+import Home from './Pages/Home';
 Modal.setAppElement('#root');
 
 	
@@ -58,37 +60,14 @@ const App = () =>
 	return (
 		<div className="fullContainer">
 			<Router>
-				<div className="container">
-					<div className="upper">
-						<div className="top">
-							<div className="nav">
-								<button>About</button>
-								<button>Happy Buyers</button>
-							</div>
-							<div>
-								<Sidebar />
-							</div>
-						</div>
-						<div className="title">
-							CATS4LYF
-						</div>
-					</div>
-					<div className="wheel">
-						{cat.map((catList, index) =>
-						{
-							return (
-								<CatModal key={index} catList={catList}/>
-							);
-						})}
-					</div>
-				</div>
-
-
 				{/* <div className="side">
 					<p>box</p>
 				</div> */}
 				<Routes>
-					<Route path='/'/>
+					<Route path='/' exact element={<Home cat={cat}/>}/>
+					<Route path='/checkout' element={<Checkout />}/>
+					<Route path='/About' element={<About/>}/>
+					<Route path='/happybuyers' element={<HappyBuyers/>}/>
 				</Routes>
 			</Router>
 		</div>

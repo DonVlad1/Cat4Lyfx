@@ -2,10 +2,9 @@ import Modal from 'react-modal'
 import { useState } from 'react'
 import '../App.css';
 
-const CatModal = ({ catList }) =>
+const CatModal = ({ catList, checkOut, setCheckOut }) =>
 {
     const [catStateModal, showCatStateModal] = useState(false)
-    const [checkOut, setCheckOut] = useState([])
 
 
     function openModal()
@@ -20,11 +19,8 @@ const CatModal = ({ catList }) =>
 
     function addToBasket()
     {
-        let tempCatList = { ...catList }
+        const tempCatList = [...checkOut, catList]
         setCheckOut(tempCatList)
-
-
-        //    return selectedButtons => [...selectedButtons, button]
     }
 
 

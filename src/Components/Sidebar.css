@@ -86,7 +86,7 @@
 .basketContents {
     margin-top: -50px;
     margin-left: -34px;
-    height: 89.8vh;
+    height: 85vh;
     width: 116%;
     display: flex;
     flex-direction: column;
@@ -118,9 +118,16 @@
     background: rgba(0,0,0,0);
 }
 
+.runningTotal {
+    width: 100%;
+    padding: 0.5em;
+    margin-left: -28px;
+}
+
 .sendCheckout {
     width: 50%;
     margin-left: -30px;
+    margin-top: -20px;
     padding: 1.5em;
     color: white;
     border: none;
@@ -130,14 +137,54 @@
     background-size: 100% 100%;
     background-repeat: no-repeat;
 }
+.sendCheckout:hover {
+    animation: shake 0.5s infinite;
+}
 
-.basketImg {
-    width: 80%;
-    margin: 1em 0 1em 0;
+.polaroidStyle {
+    width: 98%;
+    background-color: rgb(238, 238, 246);
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
     box-shadow: 0 0 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.basketImg {
+    width: 96%;
+    margin: 0.5em 0 0 0;
     border-radius: 1em;
+}
+.caption {
+    font-size: 1em;
+    width: 90%;
+    background: rgb(62,62,62);
+    background: linear-gradient(180deg, rgba(62,62,62,1) 0%, rgba(101,101,101,1) 50%, rgba(62,62,62,1) 100%);
+    opacity: 0.99;
+    padding: 0.25em;
+    height: 2em;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    justify-content: center;
 }
 
 span {
     margin-left: 16px;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
 }

@@ -12,10 +12,16 @@
     transition: 250ms;
 }
 
-.menu-bars {
-    margin-left: 2rem;
-    font-size: 2rem;
-    background: none;
+.fixMeDaddy {
+    position: fixed;
+    top: 0%;
+    right: -8px;
+    height: 4em;
+    transition: 850ms;
+}
+.fixMeDaddy.somethingElse {
+    right: 250px;
+    transition: 250ms;
 }
 
 .side-menu {
@@ -36,11 +42,6 @@
     right: 0%;
     transition: 250ms;
 }
-
-/* .cart-icon:hover{
-    cursor: pointer;
-    color: rgb(43, 226, 156);
-} */
 
 .side-text {
     display: flex;
@@ -80,6 +81,37 @@
     padding-left: 20px;
     margin-top: -18px;
     align-items: center;
+}
+
+.basketContents {
+    margin-top: -50px;
+    margin-left: -34px;
+    height: 89.8vh;
+    width: 116%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.sendCheckout {
+    width: 50%;
+    margin-left: -30px;
+    padding: 1.5em;
+    color: white;
+    border: none;
+    background: none;
+    background-image: url("../buttonBack.png");
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.basketImg {
+    width: 80%;
+    margin: 1em 0 1em 0;
+    box-shadow: 0 0 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1em;
 }
 
 span {

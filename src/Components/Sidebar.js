@@ -16,36 +16,30 @@ function Sidebar({checkOut, setCheckOut}) {
     <>  
 
 
-        <div className={sidebar ? 'sideBar active sideBarOpen' : 'sideBar'}>
-            <Link to="#" className='menu-bars'>
-                <button className="basket" onClick={showSidebar}>
-                    <BasketDiv>
-                        Checkout Basket&nbsp;&nbsp;
-                        <AiIcons.AiOutlineShoppingCart className='cart-icon'/>
-                    </BasketDiv>
-                </button>
-            </Link>
+        <div className={sidebar ? 'fixMeDaddy somethingElse' : 'fixMeDaddy'}>
+            <button className="basket" onClick={showSidebar}>
+                        <BasketDiv>
+                            Checkout Basket&nbsp;&nbsp;
+                            <AiIcons.AiOutlineShoppingCart className='cart-icon'/>
+                        </BasketDiv>
+            </button>
+        </div>
+        <div className={sidebar ? 'sideBar active' : 'sideBar'}>
             <nav className='side-menu'>
                 <ul className='side-menu-items'>
                     <li className='sidebar-toggle'>
-                        <Link to="#" className='menu-bars'>
-                            
-                        </Link>
                     </li>
-                        {/* new checkout button */}
                         <div>
-                            <Link to="/checkout">
-                                <button>Checkout</button>
-                                <img className='image' src={checkOut.catImage} />
-                                <div>
-                                    {checkOut.map((checkOutList, checkIndex) =>
-                                    {
-                                        console.log(checkOut)
-                                        return (
-                                            <img src={checkOutList.catImage} />
+                            <div className="basketContents">
+                                {checkOut.map((checkOutList, checkIndex) =>
+                                {
+                                    return (
+                                        <img key={checkIndex} src={checkOutList.catImage} className="basketImg"/>
                                         );
                                     })}
-                                </div>
+                            </div>
+                            <Link to="/checkout">
+                                <button className="sendCheckout">Checkout</button>
                             </Link>
                         </div>
                 </ul>

@@ -36,7 +36,7 @@ const [checkOut, setCheckOut] = useState([])
             {
                 return (
                     (catList==="middle message")?(
-                        <p className="middleMessage">shop for a new,<br/>furry companion!</p>
+                        <p className="middleMessage">SHOP FOR A NEW,<br/><br/>FURRY COMPANION!</p>
                     ):(
                         <CatModal key={index} catList={catList} checkOut={checkOut} setCheckOut={setCheckOut}/>
                     )

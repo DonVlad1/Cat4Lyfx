@@ -21,7 +21,7 @@ const App = () =>
 			try
 			{
 				setErrorMsg('');
-				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=9&uniqueitems=true');
+				const response = await fetch('https://api.thecatapi.com/v1/images/search?limit=8&uniqueitems=true');
 				if (!response.ok)
 				{
 					throw new Error(response.statusText);
@@ -37,7 +37,7 @@ const App = () =>
 						catPrice: Math.ceil(faker.datatype.number() / 100)
 					}
 				})
-
+				catDetails.splice(4,0,"middle message")
 				console.log(catDetails)
 				setCat(catDetails);
 			} catch (error)
@@ -65,7 +65,7 @@ const App = () =>
 								<button>About</button>
 								<button>Happy Buyers</button>
 							</div>
-							<div>
+							<div className="highZ">
 								<Sidebar />
 							</div>
 						</div>
@@ -74,10 +74,15 @@ const App = () =>
 						</div>
 					</div>
 					<div className="wheel">
+						{/* <p className="middleMessage">shop for a new,<br/>furry companion!</p> */}
 						{cat.map((catList, index) =>
 						{
 							return (
-								<CatModal key={index} catList={catList}/>
+								(catList==="middle message")?(
+									<p className="middleMessage">shop for a new,<br/>furry companion!</p>
+								):(
+									<CatModal key={index} catList={catList}/>
+								)
 							);
 						})}
 					</div>

@@ -57,38 +57,62 @@ body {
 }
 
 .wheel {
-    margin-top: 3em;
-    max-width: 80vw;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    padding-top: 2em;
+    max-width: 90vw;
     height: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-}
-
-.imageBox {
-    width: 23%;
-    height: 25%;
+    background-color: rgba(0, 0, 0, 0.458);
+    background-image: url("neonframe.png");
+    background-position: center;
+    background-size: 125.5% 223%;
+    /* background-size: 124.5% 220%; */
+    background-repeat: no-repeat;
+    transform: rotate(180deg);
+    z-index: 0;
+  }
+  
+  .imageBox {
+    transform: rotate(180deg);
+    width: 24%;
+    height: 27%;
     margin: 1em;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.458);
-    background-image: url("border.gif");
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 0 rgb(255, 255, 255), 0 6px 20px 0 rgb(255, 255, 255);
 }
 
 .wheelImages
 {
     height: 15vh;
     max-width: 98%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 0 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.561);
 }
-
+  
 .wheelImages:hover{
     cursor: pointer;
     animation: grow 2s infinite;
+}
+
+.middleMessage {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  transform: rotate(180deg);
+  font-family: 'IM Fell English', serif;
+  font-size: 2em;
+  width: 24%;
+  height: 27%;
+  align-items: center;
+  margin: 0.5em;
+  color: white;
+  text-shadow: 0 0 3px #aa00ff;
 }
 
 
@@ -171,6 +195,10 @@ button:hover {
     border-right: none;
     background: rgb(2, 1, 10);
     transition: 0.2s;
+}
+
+.highZ {
+  z-index: 1;
 }
 
 @keyframes grow {

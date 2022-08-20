@@ -58,7 +58,7 @@ function Sidebar({ checkOut, setCheckOut, total, setTotal })
                                         );
                                     })}
                             </div>
-                            <p className="runningTotal">£{(total)}</p>
+                            <p className="runningTotal">£{total}</p>
                             <Link to="/checkout">
                                 <button className="sendCheckout">Checkout</button>
                             </Link>

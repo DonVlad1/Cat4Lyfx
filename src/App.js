@@ -66,7 +66,7 @@ const App = () =>
 			<Router>
 				<Routes>
 					<Route path='/' exact element={<Home cat={cat} total={total} setTotal={setTotal} checkOut={checkOut} setCheckOut={setCheckOut} />} />
-					<Route path='/checkout' element={<Checkout checkOut={checkOut} setCheckOut={setCheckOut} />} />
+					<Route path='/checkout' element={<Checkout total={total} setTotal={setTotal} checkOut={checkOut} setCheckOut={setCheckOut} />} />
 					<Route path='/About' element={<About />} checkOut={checkOut} setCheckOut={setCheckOut} />
 					<Route path='/happybuyers' element={<HappyBuyers />} checkOut={checkOut} setCheckOut={setCheckOut} />
 				</Routes>

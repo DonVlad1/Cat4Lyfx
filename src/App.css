@@ -42,13 +42,6 @@ body {
 .top {
     width: 100%;
     display: flex;
-    /* justify-content: space-between;
-    align-items: flex-start; */
-}
-
-.nav {
-    display: flex;
-    margin-top: 8px;
 }
 
 .title {
@@ -71,8 +64,6 @@ body {
     background-image: url("neonframe-edit.png");
     background-position: center;
     background-size: 100% 100%;
-    /* background-size: 125.5% 223%; */
-    /* background-size: 124.5% 220%; */
     background-repeat: no-repeat;
     transform: rotate(180deg);
   }
@@ -115,20 +106,6 @@ body {
   margin: 0.5em;
   color: white;
   text-shadow: 0 0 3px #aa00ff;
-}
-
-
-.nav button {
-    padding: 1.5em;
-    color: white;
-    border: none;
-    background: none;
-    background-image: url("buttonBack.png");
-    background-position: top;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    transition: 0.2s;
-    width: 9.3em;
 }
 
 .modalContent
@@ -177,7 +154,7 @@ body {
 
 button:hover {
     cursor: pointer;
-    color: rgb(43, 226, 156);
+    color: rgb(15, 231, 242);
     transition: 0.2s;
 }
 
@@ -201,23 +178,11 @@ button:hover {
     border-right: none;
     background: rgb(2, 1, 10);
     transition: 0.2s;
+    width: 151.17px;
 }
 
 .highZ {
   z-index: 1;
-}
-
-.polaroidStyle2 {
-    margin: 0px 2em;
-    max-width: 25%;
-    background-color: rgb(238, 238, 246);
-    margin-bottom: 2em;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    box-shadow: 0 0 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @keyframes grow {

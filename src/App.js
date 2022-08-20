@@ -4,8 +4,6 @@ import { faker } from '@faker-js/faker';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Checkout from './Pages/Checkout';
-import HappyBuyers from './Pages/HappyBuyers';
-import About from './Pages/About';
 import Home from './Pages/Home';
 
 Modal.setAppElement('#root');
@@ -67,8 +65,6 @@ const App = () =>
 				<Routes>
 					<Route path='/' exact element={<Home cat={cat} total={total} setTotal={setTotal} checkOut={checkOut} setCheckOut={setCheckOut} />} />
 					<Route path='/checkout' element={<Checkout total={total} setTotal={setTotal} checkOut={checkOut} setCheckOut={setCheckOut} />} />
-					<Route path='/About' element={<About />} checkOut={checkOut} setCheckOut={setCheckOut} />
-					<Route path='/happybuyers' element={<HappyBuyers />} checkOut={checkOut} setCheckOut={setCheckOut} />
 				</Routes>
 			</Router>
 		</div>

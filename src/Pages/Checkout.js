@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom';
 import * as TbIcons from "react-icons/tb";
 import styled from 'styled-components';
+import img from '../buttonBack.png';
 
 function Checkout({ checkOut, setCheckOut, total, setTotal}) {
 	function removeItem (index) {
@@ -15,7 +16,6 @@ function Checkout({ checkOut, setCheckOut, total, setTotal}) {
     }
 
 	useEffect(()=> {
-        // console.log(checkOut[0].catPrice)
         let sum = 0
         for (let i = 0; i < checkOut.length; i++){
             sum += Number(checkOut[i].catPrice)
@@ -27,17 +27,6 @@ function Checkout({ checkOut, setCheckOut, total, setTotal}) {
 	<div className="container">
 		<div className="upper">
 			<div className="top">
-				<div className="nav">
-				<Link to="/">
-					<button>Home</button>
-				</Link>
-				<Link to="/about">
-					<button>About</button>
-				</Link>
-				<Link to="/happybuyers">
-					<button>Happy Buyers</button>
-				</Link>
-				</div>
 				<div>
 					<Link to="/">
 						<button className="basket fixMeDaddy">Back</button>
@@ -48,58 +37,120 @@ function Checkout({ checkOut, setCheckOut, total, setTotal}) {
 				Checkout
 			</div>
 		</div>
-		
-		<SpecialDiv >
-			{/* <h1>{checkOut[0].catName}</h1> */}
-			<ArrayDiv>			
-				{checkOut.map((checkOutList, index) =>{
-				return (
-					<div className="polaroidStyle2" key={index}>
-						<img  src={checkOutList.catImage} className="wheelImages" alt='cat'/>
-						<p className="caption">{checkOutList.catName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;£{checkOutList.catPrice}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-						<TbIcons.TbTrashX className='trashIcon' onClick={()=>removeItem(checkOutList, index)} /></p>
-					</div>
-					);
-				})}
-			</ArrayDiv>
-			<div>
-				<button>Buy</button>
-				<p className="runningTotal">£{total}</p>
-			</div>
-		</SpecialDiv>
+		<SpecialWrapper>
+			<SpecialDiv >
+				<ArrayDiv>			
+					{checkOut.map((checkOutList, index) =>{
+					return (
+						<PolaroidDiv key={index}>
+							<SpecialImg  src={checkOutList.catImage} alt='cat'/>
+							<p className="caption">{checkOutList.catName}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;£{checkOutList.catPrice}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<TbIcons.TbTrashX className='trashIcon' onClick={()=>removeItem(checkOutList, index)} /></p>
+						</PolaroidDiv>
+						);
+					})}
+				</ArrayDiv>
+				<TotalDiv>
+					<SpecialButton className="runningTotal">£{total}&nbsp;&nbsp;&nbsp;-&nbsp;&nbsp;&nbsp;Buy</SpecialButton>
+				</TotalDiv>
+			</SpecialDiv>
+		</SpecialWrapper>
 	</div>
   )
 }
 
 export default Checkout
 
-const SpecialDiv = styled.div`
-	margin-top: 1em;
-    margin-bottom: 1em;
-    padding-top: 2em;
-    max-width: 90vw;
-    height: 100vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-	background-color: aqua;
-	/* display: flex;
-	justify-content: center;
+const SpecialWrapper = styled.div`
+	display: flex;
 	flex-direction: column;
-	width: 80vw;
-	max-height: 70vh;
-	color: black;
-	background-color: black;
-	opacity: 0.9;
-	border: 1px solid blueviolet;
 	align-items: center;
-	color: white; */
+	justify-content: space-around;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+`
+
+const SpecialDiv = styled.div`
+	// margin-top: 1em;
+    // margin-bottom: 1em;
+    padding-top: 1em;
+    height: 95%;
+	width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.561);
+	
 `
 const ArrayDiv = styled.div`
 	display: flex;
 	justify-content: center;
 	flex-direction: row;
 	flex-wrap: wrap;
-	height: 70vh;
-	border: 1px solid green;
+	height: 90%;
+	width: 90%;
+	overflow-y:auto;
+	&::-webkit-scrollbar {
+		width: 20px;
+	}
+	&::-webkit-scrollbar-track {
+		background-color: transparent;
+	}
+	&::-webkit-scrollbar-thumb {
+		background-color: rgb(236, 92, 224);
+		border-radius: 20px;
+		border: 6px solid transparent;
+		background-clip: content-box;
+	}
+	&::-webkit-scrollbar-thumb:hover {
+		background-color: rgb(251, 134, 251);
+	}
+	&::-webkit-scrollbar-corner {
+		background: rgba(0,0,0,0);
+	}
+`
+
+const TotalDiv = styled.div`
+	width: 100%;
+	text-align: center;
+`
+
+const SpecialButton = styled.button`
+width: 10%;
+padding: 1em;
+color: white;
+border: none;
+background: none;
+background-image: url(${img});
+background-position: top;
+background-size: 100% 100%;
+background-repeat: no-repeat;
+&:hover {
+	animation: shake 0.5s infinite;
+}
+`
+
+const PolaroidDiv = styled.div`
+margin: 0px 2em;
+max-width: 20%;
+max-height: 45%;
+padding-top: 1em;
+background-color: rgb(238, 238, 246);
+margin-bottom: 2em;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-content: space-around;
+color: rgb(255, 255, 255);
+text-align: center;
+box-shadow: 0 0 8px 0 rgb(0, 0, 0, 1), 0 6px 20px 0 rgba(0, 0, 0, 1);
+`
+
+const SpecialImg = styled.img`
+max-height: 70%;
+max-width: 90%;
+box-shadow: 0 0 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.561);
+border-radius: 10px;
 `

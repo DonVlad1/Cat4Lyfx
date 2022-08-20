@@ -207,6 +207,19 @@ button:hover {
   z-index: 1;
 }
 
+.polaroidStyle2 {
+    margin: 0px 2em;
+    max-width: 25%;
+    background-color: rgb(238, 238, 246);
+    margin-bottom: 2em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    box-shadow: 0 0 8px 0 rgb(0, 0, 0), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
 @keyframes grow {
     0% { transform: scale(1); }
     50% { transform: scale(1.1); }
